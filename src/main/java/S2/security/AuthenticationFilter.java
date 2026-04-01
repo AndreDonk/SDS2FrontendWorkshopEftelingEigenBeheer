@@ -19,7 +19,7 @@ import java.io.IOException;
 public class AuthenticationFilter implements ContainerRequestFilter {
 
     @Override
-    public void filter(ContainerRequestContext requestCtx) throws IOException {
+    public void filter(ContainerRequestContext requestCtx){
         boolean isSecure = requestCtx.getSecurityContext().isSecure(); //is https or similar used
         MySecurityContext msc = new MySecurityContext(null, null, isSecure); //treat user as guest unless otherwise proved
 

@@ -36,7 +36,7 @@ public class AuthenticationResource {
     public Response authenticateUser(LogonRequest logonRequest) {
         try {
             User user = MapApplication.getUserByName(logonRequest.username);
-            if (user.validateNameAndPassword(logonRequest.username, logonRequest.password)){
+            if (user != null && user.validateNameAndPassword(logonRequest.username, logonRequest.password)){
                 // Issue a token for the user
                 String token = createToken(user.getName(), user.getRole());
 

@@ -1,7 +1,5 @@
 package S2.domein;
 
-import S2.dto.LocationDto;
-
 import java.util.Arrays;
 
 public class Map {

@@ -6,7 +6,6 @@ import S2.dto.LocationDto;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
-import java.util.List;
 import S2.domein.Map;
 
 @Path("map")
