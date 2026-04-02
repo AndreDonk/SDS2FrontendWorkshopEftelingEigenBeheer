@@ -15,6 +15,33 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
             </plugin>
+            <plugin>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <schemaVersion>v2</schemaVersion>
+                    <resourceGroup>FEWS-1775130942871-rg</resourceGroup>
+                    <appName>FEWS-1775130942871</appName>
+                    <pricingTier>F1</pricingTier>
+                    <region>northeurope</region>
+                    <runtime>
+                        <os>Linux</os>
+                        <javaVersion>Java 21</javaVersion>
+                        <webContainer>Tomcat 10.1</webContainer>
+                    </runtime>
+                    <deployment>
+                        <resources>
+                            <resource>
+                                <directory>${project.basedir}/target</directory>
+                                <includes>
+                                    <include>*.war</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </deployment>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
